@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.inherit.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                    <group>
+                        <field name="type_partner"/>
+                    </group>
+            </field>
+        </record>
+
+        <record id="res_partner_view_tree_inherit" model="ir.ui.view">
+            <field name="name">res.partner.inherit.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                    <tree>
+                        <field name="type_partner" attrs="{'invisible': [('type_partner', '!=', 'public')]}"/>
+                    </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

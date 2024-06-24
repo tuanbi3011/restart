@@ -1,0 +1,116 @@
+		## Các phép tính
+# Cộng
+a = 3 + 4
+print(a)
+
+# Trừ
+a = 4 - 3
+print(a)
+
+# Nhân
+a = 3 * 4
+print(a)
+
+# Chia 
+a = 4 / 3 
+print(a)
+a = 4 // 3 # Chia ko lấy dư
+print(a)
+a = 4 % 3 # Chia chỉ lấy phần dư
+print(a)
+
+# Lũy thừa
+a = 3 ** 4
+print(a)
+
+		## Nâng cao phép tính
+#Tính BMI
+weight = 96
+height = 1.78
+BMI = weight / (height ** 2)
+print(BMI)
+
+		## Strings
+# 1 câu
+a = 'We'
+print(a)
+
+# Ngắt câu
+a = 'We don\'t talk anymore'
+print(a)
+
+# Xuống dòng
+a = 'Yêu tổ quốc\nYêu đồng bào'
+a # Ko có print () thì sẽ hiển thị \n trên kết quả
+print(a)
+
+# Note lại cả câu bằng r
+a = r'Yêu tổ quốc\nYêu đồng bào'
+print(a)
+
+# Hiển thị nhiều dòng
+print("""/
+Yêu tổ quốc, Yêu đồng bào
+Học tập tốt, lao động tốt
+Đoàn kết tốt, kỷ luật
+Giữ gìn vệ sinh thật tốt
+Khiêm tốn, thật thà, dũng cảm
+""")
+
+# Kết hợp phép toán để rút ngắn câu từ
+a = 3 * 'un' + 'ium'
+print(a)
+
+# 2 string đứng cạnh nhau sẽ mặc định thành 1
+a = 'Py' 'thon' 
+print(a)
+
+# Xuống dòng khi muốn break đoạn text dài
+a = ('I see you monster,' 'i see your pain') # Chỉ có thể kết nối 2 câu, ko kết nối vs biến và biểu thức
+print(a)
+b = a + ', tell me your problem' # Nếu muốn kết nối tiếp thì dùng +
+print(b)
+
+# Hiển thị từng chữ theo vị trí
+a = 'Python' # Nếu cố gắng hiển thị quá số lượng chữ cái sẽ lỗi
+print(a[5]) # Hiển thị chữ cái thứ 5
+print(a[-1]) # Hiển thị chữ cái cuối
+print(a[1:4]) # Hiển thị từ 1 đến 4
+print(a[:2]) # Hiển thị từ 0 đến 1 (2 không tính)
+print(a[4:]) # Hiển thị từ 4 trở đi
+print(a[-2:]) # Hiển thị từ thứ -2 đến -1 từ bên trái 
+print(a[:2] + a[2:]) # Hiển thị từ 0 đến 1 cộng với từ 2 trở đi
+print(a[4:42]) # Nếu hiển thị dãy quá số lượng tối đa thì chỉ hiển thị tới số lượng tối đa
+print(a[42:]) # Nếu hiển thị bắt đầu đã vượt quá số lượng tối đa thì hiển thị rỗng
+print('J' + a[1:]) # Thêm chữ cái đầu tiên và hiển thị tiếp từ 1
+print(a[0:] + '34') # Hiển thị từ 0 và thêm 34 ở cuối
+print(len(a)) # Hiển thị độ dài
+
+		## Lists
+a = [1 , 4, 9, 16, 25]
+print(a) # Hiển thị danh sách
+print(a[0]) # Hiển thị chữ cái/số ở vị trí 0
+print(a[:]) # Hiển thị bản sao nông của danh sách
+print(a + [36, 45, 54, 63, 81, 100]) # Hiển thị danh sách và cộng thêm dãy số mới
+a[3] = 10 # Thay thế số thứ 3 trong danh sách thành 10
+print(a)
+a.append(36) # Thêm 1 số mới vào cuối danh sách
+print(a)
+a.append(9 ** 3) # Thêm kết quả của phép tính mới vào cuối danh sách
+print(a)
+a[0:2] = [9, 18, 27] # Thay thế số từ 0 đến 2 với các số mới
+print(a)
+a[0:2] = [] # Xóa những số ở vị trí chỉ định
+print(a)
+print(len(a)) # Hiển thị số lượng/độ dài của danh sách
+n = ['a', 'b', 'c']
+x = [a, n] # Hiển thị x là kết hợp của a và n, với a là vị trí 0 và n là vị trí 1
+print(x)
+print(x[0])
+		## Nhiều ví dụ hơn nữa
+a,b = 0, 1
+while a < 10 : # Điều kiện khi a vẫn còn bé hơn 10
+	print(a)
+	a, b = b, a+b # Hiển thị dãy số lần lượt là b, số thứ 2 sẽ là a + b, tới khi nào a ko còn bé hơn 10 nữa
+	print(a, end=',') # Hiện thị dãy số theo dãy số với string khác
+	a, b = b, a + b
