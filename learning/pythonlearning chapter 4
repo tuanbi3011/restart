@@ -1,0 +1,120 @@
+								# Bài tập dùng if
+#a = int(input("Hãy nhập số tuổi của bạn :"))
+#if a < 18:
+#	print('Bạn chưa đủ tuổi uống rượu')
+#elif a < 16:
+#	print('Bạn còn đang học cấp 2')
+#elif a < 11:
+#elif a < 6 :
+#	print('Bạn còn chưa học xong mẫu giáo')
+#elif a < 0 :
+#	a = 0 
+#	print('Bạn còn chưa ra đời')
+#else:
+#	print('Bạn lớn rồi kệ bạn')
+
+								# Bài tập dùng for
+#a = ['one', 'three', 'two', 'four', 'five']
+#for x in a:
+#	print(x, len(x)) # Hiển thị các chữ cùng với số lượng chữ
+
+#for x in a[:]: # Vòng lặp ở trên 1 bản sao
+#		a.insert(0, x) # Với những cái nào thỏa mãn đ/kiện thì cho lên đầu
+#		print(a)
+
+								# Bài tập dùng range
+a = ['Mary-Ann', 'Im', 'really', 'crazy', 'bout', 'you', 'deed', 'i', 'am']
+#for x in range(len(a)): # Tạo ra vòng lặp đếm từng số  
+#for x, value in enumerate(a): # Tương tự phía trên
+#	print (x, a[x]) 
+
+
+								# Bài tập dùng break
+#for n in range(1, 10):
+#	for x in range(2, n):
+#		if n % x == 0:
+#			print(n, 'bằng', x, '*', n//x)
+#			break # Ngừng vòng lặp
+#	else:
+#		print(n, 'là số nguyên tố')
+
+								# Bài tập dùng continue
+#for n in range(1, 10):
+#	if n % 2 == 0:
+#		print("Số chẵn", n)
+#		continue % Tiếp tục vòng lặp
+#	print("Số lẻ", n)
+
+								# Bài tập dùng pass
+#numbers = [1, 2, 3, 4, 5]
+
+#for number in numbers:
+#    if number == 3:
+#        break
+#else:
+#    pass 
+#print(number)
+		
+								# Bài tập dùng def để xác định chức năng
+#def fib(n):
+#	a, b = 1, 2
+#	while a < n:
+#		print (a, end=' ')
+#		a, b = b, a ** 2 + b
+#	print()
+#f = fib
+#f(2000)
+
+#def gib(n):
+#	result = [] 
+#	a, b = 0, 1
+#	while a < n:
+#		result.append(a)
+#		a, b = b, a+b
+#	return result
+#g100 = gib(100)
+#g100
+
+
+								# Bài tập dùng def để đặt giá trị mặc định
+#def ask_ok(prompt, retries=4, reminder='Are you really ok?'): #prompt là câu hỏi, retries là số lần thử, reminder là câu nhắc khi nhập sai định dạng
+#	while True:
+#		ok = input(prompt)
+#		if ok in ('y', 'yes'):
+#			return True
+#		if ok in ('no', 'n', 'nope'):
+#			return False
+#		retries = retries - 1
+#		if retries < 0:
+#			raise ValueError('Get some sleep')
+#		print(reminder)
+#ask_ok('You good mate?')
+
+								# Bài tập dùng def để thiết lập keyword
+#def parrot(monster, state='a nose', action='weird', type='normal'):
+#    print("-- This parrot wouldn't", action, end=' ')
+#    print("if you put", monster, "volts through it.")
+#   print("-- Lovely plumage, the", type)
+#    print("-- It's", state, "!")
+#parrot(1000)
+#parrot(1000, 'bereft of life')
+#parrot(1000, 'bereft of life', 'jump', 'Blue Parrot')
+							# Ví dụ thứ 2
+#def mental(food, *arguement, **keywords):
+#	print("-- Do you still take order of", food, "?")
+#	print("- I'm sorry, but you can try something else")
+#	for a in arguement:
+#		print(a)
+#	print("-" * 30)
+#	for x in keywords:
+#		print(x, ":", keywords[x])
+#mental("Hamburger", "Its very bad, sir",
+#		"its very very very bad.",
+#		shophunter="1",
+#		client="2",
+#		sketch="Silly Thing")
+
+							# Bài tập dùng def để làm danh sách đối số
+def bs(*arguement, sep="/"):
+		return sep.join(arguement)
+bs("earth", "mars", "venus", sep=",")
