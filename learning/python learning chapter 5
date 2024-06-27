@@ -1,0 +1,111 @@
+						#Mở rộng thêm về lists
+#numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'one', 'one']
+#print(numbers.count('one')) # Đếm có bao nhiêu chữ "one"
+#a = ['elevent', 'twelve', 'thirteen']
+#numbers.extend(a) # Mở rộng danh sách number bằng 1 danh sách khác
+#numbers.append('zero') # Thêm vào cuối danh sách
+#numbers.insert(0, 'zero') # Thêm vào danh sách ở 1 vị trí tùy chỉnh
+#numbers.remove('two') # Xóa 1 dữ liệu trong danh sách
+#numbers.pop(5) # Xóa 1 dữ liệu ở vị trí chỉ định
+#numbers.clear() # Xóa mọi thứ trong danh sách
+#print(numbers)
+#index_number = numbers.index('five', 1, 5) # Tìm vị trí của phần tử với bắt đầu tìm từ vị trí và kết thúc ở vị trí 5
+#print(index_number) 
+#numbers.reverse() # Đọc ngược danh sách
+#print(numbers)
+#numbers.sort() # Sắp xếp lại những từ giống nhau theo bảng chữ cái, khi chạy sort thì reverse sẽ bị vô hiệu hóa
+#print(numbers)
+#numbers.copy() # Tạo 1 bản copy tạm thời
+
+						# Sử dụng list như stack
+#stack = []
+#stack.append(1)
+#stack.append(2)
+#stack.append(2)
+#stack.append(3)
+#print(stack)
+#last_stack = stack.pop() # Lấy giá trị cuối cùng và xóa nó
+#print(last_stack)
+#print(stack)
+#top_stack = stack[0] # Lấy giá trị ở vị trí tùy chỉnh
+#print(top_stack)
+
+						# Sử dụng lists như queues
+#editor = []
+#editor.append("Hello, ")
+#editor.append("world!")
+#print(editor)
+
+#top_editor = editor[0]
+#print(top_editor)
+
+#bot_editor = editor[1]
+#print(bot_editor)
+
+						# Sử dụng list comprehensions
+#number = list(map(lambda x: x**2, range(10)))
+#number=[x+2 for x in range(10)] # Tác dụng tương tự như câu trên
+#print(number)
+
+						# Sử dụng list comprehensions lồng nhau
+#matrix = [
+#    [1, 2, 3, 4],
+#    [5, 6, 7, 8],
+#    [9, 10, 11, 12],
+#]
+#print(matrix)
+#transposed = []
+#for i in range (4):
+#	transposed.append([row[i] for row in matrix]) #Lấy phần tử i từ mỗi hàng trong matrix
+#print(transposed)
+#list(zip(*matrix)) #Cách viết ngắn gọn vs khi dùng zip
+
+
+						#Sử dụng del để xóa theo vị trí
+#a = [1, 2, 3, 4, 5, 6]
+#del a[1]
+#print(a)
+
+				# Sử dụng tuple và sequences để lưu trữ 1 tập hợp giá trị
+#a = 1, 2, 3, 4, 5, 6
+#print(a[0])
+#t = a, (6, 7, 8, 9, 10) # Có thể lồng nhau
+#print(t)
+#yi = ([1, 2, 3], [4, 5, 6])
+#print(yi)
+#x = a, t, yi
+#print(x)
+
+				# Sử dụng sets để lưu trữ 1 tập hợp các giá trị độc nhất
+#basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'} # dùng {} sẽ khiến nó chỉ hiển thị các giá trị độc nhất
+#print(basket)        
+#a = set('uoghohasoifdhoiad') # Set sẽ lưu trữ 1 tập hợp chữ cái độc nhất
+#print(a)
+#b = {x for x in 'uoghohasoifdhoiad' if x not in 'acbd'}
+#print(b)
+
+				# Sử dụng Dictionaries để lưu trữ các cặp giá trị key
+#account = {'tuanbi' : 3011, 'ductuan': 2001}
+#account['password'] = 1999 
+#print(account)
+#del account['ductuan'] #Khi xóa 1 thì sẽ có 2 thứ bị xóa vì nó đi theo cặp
+#print(list(account))
+#dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+
+#{x: x**2 for x in (2, 4, 6)}
+
+					# Sử dụng vòng lặp
+#knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+#for k, v in knights.items():
+#    print(k, v)
+
+#for i, v in enumerate(['tic', 'tac', 'toe']): # enumerate dùng để thêm 1 giá trị vào 1 vòng lặp
+#	print(i, v)
+
+#questions = ['name', 'quest', 'favorite color']
+#answers = ['lancelot', 'the holy grail', 'blue']
+#for q, a in zip(questions, answers):
+#    print('What is your {0}?  It is {1}.'.format(q, a))
+
+#for i in reversed(range(1, 10, 2)):
+#	print(i)
