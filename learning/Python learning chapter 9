@@ -1,0 +1,58 @@
+#def scope_test():
+#    def do_local():
+#        spam = "local spam"
+
+#    def do_nonlocal():
+#        nonlocal spam
+#        spam = "nonlocal spam"
+
+#    def do_global():
+#        global spam
+#        spam = "global spam"
+
+#    spam = "test spam"
+#    do_local()
+#    print("After local assignment:", spam)
+#    do_nonlocal()
+#    print("After nonlocal assignment:", spam)
+#    do_global()
+#    print("After global assignment:", spam)
+
+#scope_test()
+#print("In global scope:", spam)
+
+                # Bài tập sử dụng scope(phạm vi) và Namespaces(không gian)
+
+#def inside():
+#    def normal():
+#        x = "testing"
+
+#    def inside_real():
+#        nonlocal x
+#        x = "insider"
+
+#    def global_change():
+#        global x
+#        x = "finish"
+
+#    x = "1"
+#    normal()
+#    print(x)
+#    inside_real()
+#    print("Khi dùng nonlocal sẽ thay đổi biến trong phạm vi def:", x)
+#    global_change()
+#    print("Khi dùng global sẽ thay đổi x hoàn toàn ở mọi nơi:", x)
+
+#inside()
+#print("Sau khi dùng global thì x sẽ hiển thị theo global:", x)
+
+
+                            #Odds và Ends
+class Something:
+    pass
+
+nothing = Something()
+
+nothing.name = 'Empty'
+nothing.when = 'right now'
+nothing.time = 10

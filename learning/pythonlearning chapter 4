@@ -118,3 +118,41 @@ a = ['Mary-Ann', 'Im', 'really', 'crazy', 'bout', 'you', 'deed', 'i', 'am']
 def bs(*arguement, sep="/"):
 		return sep.join(arguement)
 bs("earth", "mars", "venus", sep=",")
+
+							# Bài tập danh sách giải nén
+#def monster(a , b='pain', c='problem'):
+#	print("I see your monster, i see your", b, end='')
+#	print("tell me your", c, "I'll chase them away,", end='')
+#	print("I'll be your", a)
+#d={"a": "lighthouse", "b": "pains"}
+#monster(**d)
+
+							# Bài tập dùng lambda
+number = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five')]
+number.sort(key=lambda pair: pair[1])
+number
+
+
+							# Bài tập dùng def để lưu trữ tài liệu
+def document():
+	"""I see your monsters
+	I see your pain
+	Tell me your problems
+	I'll chase them away
+	I'll be your lighthouse
+	I'll make it okay
+	When I see your monsters
+	I'll stand there so brave
+	And chase them all away
+	A cup of coffee still steaming
+	Staring back at me, it's blacker than the night
+	Ay, I'm awake but still sleeping
+	I keep telling myself I'll be alright (I won't)"""
+print(document.__doc__)
+
+							# Bài tập dùng Annotations để thêm metadata
+def f(ham: str, eggs: str = 'eggs') -> str:
+    print("Annotations:", f.__annotations__)
+    print("Arguments:", ham, eggs)
+    return ham + ' and ' + eggs
+f('spam')
