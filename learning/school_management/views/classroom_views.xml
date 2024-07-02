@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="classroom_form_view" model="ir.ui.view">
+            <field name="name">school.classroom.form</field>
+            <field name="model">school.classroom</field>
+            <field name="arch" type="xml">
+                <form string="Danh mục lớp học">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="classroom_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="classroom_tree_view" model="ir.ui.view">
+            <field name="name">school.classroom.tree</field>
+            <field name="model">school.classroom</field>
+            <field name="arch" type="xml">
+                <tree string="Danh mục lớp học">
+                    <field name="name"/>
+                    <field name="classroom_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="classroom_search_view" model="ir.ui.view">
+            <field name="name">school.classroom.search</field>
+            <field name="model">school.classroom</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group expand="1" string="Group By">
+                        <filter string="Tên lớp học" name="name" domain="[]"
+                                context="{'group_by':'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="classroom_act_window" model="ir.actions.act_window">
+            <field name="name">Danh mục phòng học</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.classroom</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <menuitem name="Danh mục phòng học" id="classroom_menu" parent="school_classroom_menu_" action="classroom_act_window"/>
+
+    </data>
+</odoo>

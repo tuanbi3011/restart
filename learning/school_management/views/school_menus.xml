@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem id="school_menu_root" name="Trường học" sequence="25"/>
+        <menuitem id="school_menu" name="Danh mục nhân sự " parent="school_menu_root" sequence="1"/>
+        <menuitem id="school_classroom_menu_" name="Danh mục lớp học" parent="school_menu_root" sequence="2"/>
+</odoo>
