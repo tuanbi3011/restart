@@ -18,6 +18,8 @@
                             </group>
                         </group>
                         <group>
+                            <field name="chu_nhiem"/>
+                            <field name="classroom_id" options="{'no_create': True, 'no_create_edit': True}" attrs="{'invisible': [('chu_nhiem', '=', False)], 'required': [('chu_nhiem', '=', True)]}"/>
                             <field name="description"/>
                         </group>
                     </sheet>

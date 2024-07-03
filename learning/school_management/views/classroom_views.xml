@@ -11,9 +11,11 @@
                         <group>
                             <group>
                                 <field name="name"/>
+                                <field name="student_id"/>
                             </group>
                             <group>
                                 <field name="classroom_id"/>
+                                <field name="teacher_id"/>
                             </group>
                         </group>
                     </sheet>
@@ -28,6 +30,7 @@
                 <tree string="Danh mục lớp học">
                     <field name="name"/>
                     <field name="classroom_id"/>
+                    <field name="teacher_id"/>
                 </tree>
             </field>
         </record>
@@ -38,8 +41,8 @@
             <field name="arch" type="xml">
                 <search>
                     <group expand="1" string="Group By">
-                        <filter string="Tên lớp học" name="name" domain="[]"
-                                context="{'group_by':'name'}"/>
+                        <filter string="Tên giáo viên" name="teacher_id" domain="[]"
+                                context="{'group_by':'teacher_id'}"/>
                     </group>
                 </search>
             </field>
