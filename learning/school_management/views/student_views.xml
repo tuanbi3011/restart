@@ -15,6 +15,7 @@
                             </group>
                             <group>
                                 <field name="student_id"/>
+                                <field name="nam_nhap_hoc"/>
                             </group>
                         </group>
                         <group>
@@ -34,6 +35,7 @@
                     <field name="student_id"/>
                     <field name="date_of_birth"/>
                     <field name="description"/>
+                    <field name="nam_nhap_hoc"/>
                 </tree>
             </field>
         </record>

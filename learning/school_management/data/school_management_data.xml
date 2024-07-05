@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    #stt : 2 chữ cái + 5 số tự sinh
+        <record id="school_management_sequence" model="ir.sequence">
+            <field name="name">Quản Lý Trường Học</field>
+            <field name="code">school.teacher</field>
+            <field name="prefix">GV</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    #Stt : 2 chữ cái + năm học + 5 số tự sinh
+        <record id="school_student_sequence" model="ir.sequence">
+            <field name="name">Quản Lý Học Sinh</field>
+            <field name="code">school.student</field>
+            <field name="prefix">HS%(year)s</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

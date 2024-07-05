@@ -29,6 +29,7 @@
         'views/student_views.xml',
         'views/teacher_views.xml',
         'views/classroom_views.xml',
+        'data/school_management_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
