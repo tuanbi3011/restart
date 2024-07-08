@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mon_hoc_form_view" model="ir.ui.view">
+            <field name="name">school.mon.hoc.form</field>
+            <field name="model">school.mon.hoc</field>
+            <field name="arch" type="xml">
+                <form string="Các môn học">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ma_mon_hoc" placeholder="Mã Môn Học"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mon_hoc_tree_view" model="ir.ui.view">
+            <field name="name">school.mon.hoc.tree</field>
+            <field name="model">school.mon.hoc</field>
+            <field name="arch" type="xml">
+                <tree string="Các môn học">
+                    <field name="name"/>
+                    <field name="ma_mon_hoc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mon_hoc_act_window" model="ir.actions.act_window">
+            <field name="name">Danh mục môn học</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.mon.hoc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Môn học" id="mon_hoc_menu" parent="school_subject_menu" action="mon_hoc_act_window"/>
+
+    </data>
+</odoo>

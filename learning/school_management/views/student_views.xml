@@ -8,13 +8,17 @@
             <field name="arch" type="xml">
                 <form string="Danh mục học sinh">
                     <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="student_id" placeholder="Mã học sinh"/>
+                            </h1>
+                        </div>
                         <group>
                             <group>
                                 <field name="name"/>
                                 <field name="date_of_birth"/>
                             </group>
                             <group>
-                                <field name="student_id"/>
                                 <field name="nam_nhap_hoc"/>
                             </group>
                         </group>

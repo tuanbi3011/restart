@@ -3,4 +3,5 @@
         <menuitem id="school_menu_root" name="Trường học" sequence="25"/>
         <menuitem id="school_menu" name="Danh mục nhân sự " parent="school_menu_root" sequence="1"/>
         <menuitem id="school_classroom_menu_" name="Danh mục lớp học" parent="school_menu_root" sequence="2"/>
+        <menuitem id="school_subject_menu" name="Danh mục môn học" parent="school_menu_root" sequence="7"/>
 </odoo>

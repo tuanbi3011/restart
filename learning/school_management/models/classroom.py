@@ -11,6 +11,7 @@ class Classroom(models.Model):
     student_id = fields.Many2one('school.student', string="Học sinh trong lớp")
     teacher_id = fields.Many2one('school.teacher', string="Giáo viên chủ nhiệm", default=lambda self: self.env['school.teacher'].search([], limit=1))
 
+#Để quản lý chuyện đứng lớp giáo viên, tự động cập nhật bên class teacher
     @api.model
     def create(self, vals):
         res = super(Classroom, self).create(vals)
@@ -25,6 +26,7 @@ class Classroom(models.Model):
             teacher.write({'classroom_id': self.id})
         return res
 
+# Check xem giáo viên đó đã đứng lớp nào chưa
     @api.constrains('teacher_id')
     def _check_unique_teacher(self):
         for record in self:

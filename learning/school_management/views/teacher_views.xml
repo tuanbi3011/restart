@@ -8,13 +8,17 @@
             <field name="arch" type="xml">
                 <form string="Danh mục giáo viên">
                     <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="teacher_id" placeholder="Mã Giáo Viên"/>
+                            </h1>
+                        </div>
                         <group>
                             <group>
                                 <field name="name"/>
-                                <field name="date_of_birth"/>
                             </group>
                             <group>
-                                <field name="teacher_id"/>
+                                <field name="date_of_birth"/>
                             </group>
                         </group>
                         <group>

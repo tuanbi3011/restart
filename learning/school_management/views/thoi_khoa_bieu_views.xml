@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="thoi_khoa_bieu_form_view" model="ir.ui.view">
+            <field name="name">school.thoi.khoa.bieu.form</field>
+            <field name="model">school.thoi.khoa.bieu</field>
+            <field name="arch" type="xml">
+                <form string="Lịch Học Môn">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Thời khóa biểu tháng"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="classroom_id"/>
+                                <field name="teacher_id" attrs="{'readonly': [('classroom_id', '!=', False)]}"/>
+                                <field name="student_id" widget="many2many_tags" attrs="{'readonly': [('classroom_id', '!=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="ma_mon_hoc"/>
+                                <field name="start_time"/>
+                                <field name="stop_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="thoi_khoa_bieu_tree_view" model="ir.ui.view">
+            <field name="name">school.thoi.khoa.bieu.tree</field>
+            <field name="model">school.thoi.khoa.bieu</field>
+            <field name="arch" type="xml">
+                <tree string="Thời Khóa Biểu">
+                    <field name="name"/>
+                    <field name="classroom_id"/>
+                    <field name="teacher_id"/>
+                    <field name="start_time"/>
+                    <field name="stop_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="thoi_khoa_bieu_calendar_view" model="ir.ui.view">
+            <field name="name">school.thoi.khoa.bieu.calendar</field>
+            <field name="model">school.thoi.khoa.bieu</field>
+            <field name="arch" type="xml">
+                <calendar string="Thời Khóa Biểu" date_start="start_time" date_stop="stop_time">
+                    <field name="name"/>
+                    <field name="classroom_id"/>
+                    <field name="teacher_id"/>
+                    <field name="ma_mon_hoc"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record id="thoi_khoa_bieu_act_window" model="ir.actions.act_window">
+            <field name="name">Danh mục thời khóa biểu</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.thoi.khoa.bieu</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+
+        <menuitem name="Danh mục thời khóa biểu" id="thoi_khoa_bieu_menu" parent="school_subject_menu" action="thoi_khoa_bieu_act_window"/>
+
+    </data>
+</odoo>

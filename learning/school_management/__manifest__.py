@@ -29,6 +29,8 @@
         'views/student_views.xml',
         'views/teacher_views.xml',
         'views/classroom_views.xml',
+        'views/mon_hoc_views.xml',
+        'views/thoi_khoa_bieu_views.xml',
         'data/school_management_data.xml',
     ],
     # only loaded in demonstration mode

@@ -11,11 +11,13 @@ class Student(models.Model):
     date_of_birth = fields.Date(string="Ngày sinh", default=lambda self: fields.Date.context_today(self))
     nam_nhap_hoc = fields.Char(string="Năm Nhập Học", required=True)
 
+
+# Sinh mã id theo năm học
     @api.model
     def create(self, vals):
         if vals.get('student_id', _('New')) == _('New'):
-            if 'year_of_admission' in vals:
-                year = vals['year_of_admission']
+            if 'nam_nhap_hoc' in vals:
+                year = vals['nam_nhap_hoc']
                 sequence_code = 'school.student.%s' % year
                 sequence = self.env['ir.sequence'].search([('code', '=', sequence_code)], limit=1)
                 if not sequence:
