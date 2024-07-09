@@ -15,7 +15,7 @@
                         </div>
                         <group>
                             <group>
-                                <field name="name"/>
+                                <field name="student_name"/>
                                 <field name="date_of_birth"/>
                             </group>
                             <group>
@@ -35,25 +35,12 @@
             <field name="model">school.student</field>
             <field name="arch" type="xml">
                 <tree string="Danh mục học sinh">
-                    <field name="name"/>
+                    <field name="student_name"/>
                     <field name="student_id"/>
                     <field name="date_of_birth"/>
-                    <field name="description"/>
+                    <field name="average_score"/>
                     <field name="nam_nhap_hoc"/>
                 </tree>
-            </field>
-        </record>
-
-        <record id="student_search_view" model="ir.ui.view">
-            <field name="name">school.student.search</field>
-            <field name="model">school.student</field>
-            <field name="arch" type="xml">
-                <search string="Tìm kiếm học sinh">
-                    <group expand="1" string="Group By">
-                        <filter string="Tên" name="name" domain="[]"
-                                context="{'group_by':'name'}"/>
-                    </group>
-                </search>
             </field>
         </record>
 
@@ -61,11 +48,9 @@
             <field name="name">Danh mục học sinh</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">school.student</field>
-            <field name="view_mode">tree,form,search</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
-<!--        <menuitem id="school_menu_root" name="Trường học" sequence="25"/>-->
-<!--        <menuitem id="school_menu" name="Danh mục nhân sự" parent="school_menu_root" sequence="1"/>-->
         <menuitem name="Danh mục học sinh" id="student_menu" parent="school_menu" action="student_act_window"/>
 
     </data>

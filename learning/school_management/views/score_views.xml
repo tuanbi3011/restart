@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="score_tree_view" model="ir.ui.view">
+            <field name="name">school.score.tree</field>
+            <field name="model">school.score</field>
+            <field name="arch" type="xml">
+                <tree string="Điểm số môn học">
+                    <field name="student_id"/>
+                    <field name="ma_mon_hoc"/>
+                    <field name="student_name"/>
+                    <field name="student_birth_date"/>
+                    <field name="score"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="score_form_view" model="ir.ui.view">
+            <field name="name">school.score.form</field>
+            <field name="model">school.score</field>
+            <field name="arch" type="xml">
+                <form string="Điểm số môn học">
+                    <sheet>
+                        <group>
+                            <field name="student_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="ma_mon_hoc" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="student_name"/>
+                            <field name="student_birth_date"/>
+                            <field name="score"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="score_action" model="ir.actions.act_window">
+            <field name="name">Điểm số môn học</field>
+            <field name="res_model">school.score</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_student_subject" name="Điểm số môn học" parent="school_subject_menu" action="score_action"/>
+    </data>
+</odoo>

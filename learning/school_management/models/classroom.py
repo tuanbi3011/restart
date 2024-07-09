@@ -5,12 +5,13 @@ from odoo.exceptions import ValidationError
 class Classroom(models.Model):
     _name = 'school.classroom'
     _description = 'Các lớp học'
+    _rec_name = 'classroom_id'
 
     name = fields.Char(string="Tên lớp học", required=1)
     classroom_id = fields.Char(string="Mã lớp học")
-    student_id = fields.Many2one('school.student', string="Học sinh trong lớp")
     teacher_id = fields.Many2one('school.teacher', string="Giáo viên chủ nhiệm", default=lambda self: self.env['school.teacher'].search([], limit=1))
 
+    student_ids = fields.One2many('school.student', 'classroom_id', string='Học sinh trong lớp')
 #Để quản lý chuyện đứng lớp giáo viên, tự động cập nhật bên class teacher
     @api.model
     def create(self, vals):
