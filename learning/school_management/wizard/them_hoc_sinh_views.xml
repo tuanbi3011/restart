@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_add_student_to_class_wizard" model="ir.ui.view">
+            <field name="name">athem.hoc.sinh.form</field>
+            <field name="model">them.hoc.sinh</field>
+            <field name="arch" type="xml">
+                <form string="Thêm học sinh vào lớp học">
+                    <group>
+                        <field name="student_ids" widget="many2many_checkboxes">
+                            <tree string="Học sinh" editable="bottom">
+                                <field name="student_id"/>
+                                <field name="student_name"/>
+                                <field name="date_of_birth"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button string="Thêm" type="object" name="add_students" class="btn-primary"/>
+                        <button string="Hủy" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_add_student_to_class" model="ir.actions.act_window">
+            <field name="name">Thêm học sinh vào lớp học</field>
+            <field name="res_model">them.hoc.sinh</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

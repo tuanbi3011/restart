@@ -35,3 +35,23 @@ class Classroom(models.Model):
                 existing_classroom = self.search([('teacher_id', '=', record.teacher_id.id), ('id', '!=', record.id)])
                 if existing_classroom:
                     raise ValidationError("Giáo viên này đã được chỉ định cho một lớp học khác.")
+
+    @api.onchange('student_ids')
+    def _onchange_student_ids(self):
+        for student in self.student_ids:
+            student_name = student.student_name
+            date_of_birth = student.date_of_birth
+
+    @api.depends('student_ids')
+    def _compute_average_scores(self):
+        for classroom in self:
+            self.env.cr.execute("""
+                SELECT s.id, AVG(ss.score)
+                FROM school_student s
+                JOIN school_student_subject ss ON s.id = ss.student_id
+                WHERE s.classroom_id = %s
+                GROUP BY s.id
+            """, (classroom.id,))
+            scores = dict(self.env.cr.fetchall())
+            for student in classroom.student_ids:
+                student.average_score = scores.get(student.id, 0.0)

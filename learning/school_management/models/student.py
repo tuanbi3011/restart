@@ -13,6 +13,7 @@ class Student(models.Model):
     nam_nhap_hoc = fields.Char(string="Năm Nhập Học", required=True)
     average_score = fields.Float(string='Điểm trung bình', compute='_compute_average_score', store=True)
     classroom_id = fields.Many2one('school.classroom', string='Lớp học')
+    hoc_luc = fields.Char(string="Học Lực", compute="_compute_hoc_luc")
 
     ma_mon_hoc = fields.One2many('school.score', 'student_id', string='Môn học')
 
@@ -42,3 +43,14 @@ class Student(models.Model):
             subject_count = len(student.ma_mon_hoc)
             student.average_score = total_score / subject_count if subject_count > 0 else 0
 
+    @api.depends('average_score')
+    def _compute_hoc_luc(self):
+        for student in self:
+            if student.average_score >= 8.0:
+                student.hoc_luc = 'Giỏi'
+            elif student.average_score >= 6.5:
+                student.hoc_luc = 'Khá'
+            elif student.average_score >= 5.0:
+                student.hoc_luc = 'Trung bình'
+            else:
+                student.hoc_luc = 'Yếu'

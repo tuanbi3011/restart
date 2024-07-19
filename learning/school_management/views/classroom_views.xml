@@ -22,25 +22,28 @@
                             </group>
                         </group>
                         <notebook>
-                        <page string="Học sinh trong lớp">
-                            <field name="student_ids">
-                                <tree string="Học sinh">
-                                    <field name="student_name"/>
-                                    <field name="student_id"/>
-                                    <field name="date_of_birth"/>
-                                </tree>
-                                <form string="Học sinh">
-                                    <sheet>
-                                        <group>
-                                            <field name="student_name"/>
-                                            <field name="student_id"/>
-                                            <field name="date_of_birth"/>
-                                        </group>
-                                    </sheet>
-                                </form>
-                            </field>
-                        </page>
-                    </notebook>
+                            <page string="Học sinh trong lớp">
+                                <field name="student_ids" widget="many2many">
+<!--                                    <tree string="Học sinh" editable="bottom">-->
+<!--                                        <field name="student_id"/>-->
+<!--                                        <field name="student_name"/>-->
+<!--                                        <field name="date_of_birth"/>-->
+<!--                                    </tree>-->
+    <!--                                <form string="Học sinh">-->
+    <!--                                    <sheet>-->
+    <!--                                        <group>-->
+    <!--                                            <field name="student_name" options="{'no_create': True}"/>-->
+    <!--                                            <field name="student_id" options="{'no_create': True}"/>-->
+    <!--                                            <field name="date_of_birth"/>-->
+    <!--                                        </group>-->
+    <!--                                    </sheet>-->
+    <!--                                </form>-->
+                                </field>
+                            </page>
+                        </notebook>
+                        <footer>
+                            <button name="%(action_add_student_to_class)d" string="Thêm học sinh" type="action" class="btn-primary"/>
+                        </footer>
                     </sheet>
                 </form>
             </field>

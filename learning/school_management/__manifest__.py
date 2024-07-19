@@ -33,6 +33,8 @@
         'views/thoi_khoa_bieu_views.xml',
         'views/score_views.xml',
         'data/school_management_data.xml',
+        'wizard/them_hoc_sinh_views.xml',
+        # 'report/student_scores_report_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
